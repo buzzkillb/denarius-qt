@@ -1,6 +1,6 @@
 #!/bin/bash
 TEMP=/tmp/answer$$
-whiptail --title "Denarius [D]"  --menu  "Ubuntu 16.04/18.04 QT Wallet :" 20 0 0 1 "Compile Denarius QT Ubuntu 16.04" 2 "Update Denarius QT 16.04" 3 "Compile Denarius QT Ubuntu 18.04" 4 "Update Denarius QT 18.04" 2>$TEMP
+whiptail --title "Denarius [D]"  --menu  "Ubuntu 16.04/18.04 QT Wallet :" 20 0 0 1 "Compile Denarius QT Ubuntu 16.04" 2 "Update Denarius QT 16.04 to v3.4 latest" 3 "Compile Denarius QT Ubuntu 18.04" 4 "Update Denarius QT 18.04 to v3.4 latest" 2>$TEMP
 choice=`cat $TEMP`
 case $choice in
 1) echo 1 "Compiling Denarius QT Ubuntu 16.04"
@@ -39,7 +39,7 @@ unzip chaindata1612994.zip
 2) echo 2 "Update Denarius QT"
 echo "Updating Denarius Wallet"
 cd ~/denarius || exit
-git checkout master
+git checkout v3.4
 git pull
 
 #echo "Change line in denarius-qt.pro from stdlib=c99 to stdlib=gnu99"
@@ -94,7 +94,7 @@ unzip chaindata1612994.zip
 4) echo 4 "Update Denarius QT 18.04"
 echo "Updating Denarius Wallet"
 cd ~/denarius || exit
-git checkout master
+git checkout v3.4
 git pull
 
 #echo "Change line in denarius-qt.pro from stdlib=c99 to stdlib=gnu99"
