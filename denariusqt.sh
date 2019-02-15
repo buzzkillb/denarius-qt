@@ -15,7 +15,7 @@ sudo apt-get --assume-yes install qt5-default
 echo "Installing Denarius Wallet"
 git clone https://github.com/carsenk/denarius
 cd denarius || exit
-git checkout master
+git checkout v3.4
 git pull
 
 #echo "Change line in denarius-qt.pro from stdlib=c99 to stdlib=gnu99"
@@ -70,7 +70,7 @@ openssl version -v
 echo "Installing Denarius Wallet"
 git clone https://github.com/carsenk/denarius
 cd denarius
-git checkout master
+git checkout v3.4
 git pull
 
 #echo "Change line in denarius-qt.pro from stdlib=c99 to stdlib=gnu99"
