@@ -9,7 +9,7 @@ sudo apt-get --assume-yes install qt5-default
 
 echo "Installing Denarius Wallet"
 git clone https://github.com/carsenk/denarius
-cd denarius
+cd denarius || exit
 git checkout master
 git pull
 
@@ -24,7 +24,7 @@ mkdir ~/.denarius
 echo -e "nativetor=1\naddnode=denarius.host\naddnode=denarius.win\naddnode=denarius.pro\naddnode=triforce.black" > ~/.denarius/denarius.conf
 
 echo "Get Chaindata"
-cd ~/.denarius
+cd ~/.denarius || exit
 rm -rf database txleveldb smsgDB
 #wget http://d.hashbag.cc/chaindata.zip
 #unzip chaindata.zip
