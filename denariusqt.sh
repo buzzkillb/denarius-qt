@@ -26,7 +26,7 @@ make
 
 echo "Populate denarius.conf"
 mkdir ~/.denarius
-echo -e "nativetor=1\naddnode=denarius.host\naddnode=denarius.win\naddnode=denarius.pro\naddnode=triforce.black" > ~/.denarius/denarius.conf
+echo -e "nativetor=0\naddnode=denarius.host\naddnode=denarius.win\naddnode=denarius.pro\naddnode=triforce.black" > ~/.denarius/denarius.conf
 
 echo "Get Chaindata"
 cd ~/.denarius || exit
@@ -86,7 +86,7 @@ make
 
 echo "Populate denarius.conf"
 mkdir ~/.denarius
-echo -e "nativetor=1\naddnode=denarius.host\naddnode=denarius.win\naddnode=denarius.pro\naddnode=triforce.black" > ~/.denarius/denarius.conf
+echo -e "nativetor=0\naddnode=denarius.host\naddnode=denarius.win\naddnode=denarius.pro\naddnode=triforce.black" > ~/.denarius/denarius.conf
 
 echo "Get Chaindata"
 cd ~/.denarius
