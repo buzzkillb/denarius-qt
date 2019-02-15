@@ -1,9 +1,9 @@
 #!/bin/bash
 TEMP=/tmp/answer$$
-whiptail --title "Denarius [D]"  --menu  "Ubuntu 16.04 QT Installer :" 20 0 0 1 "Install Denarius QT" 2 "Update Denarius QT" 2>$TEMP
+whiptail --title "Denarius [D]"  --menu  "Ubuntu 16.04 QT Installer :" 20 0 0 1 "Compile Denarius QT" 2 "Update Denarius QT" 2>$TEMP
 choice=`cat $TEMP`
 case $choice in
-1) echo 1 "Installing Denarius FortunaStake Ubuntu 16.04"
+1) echo 1 "Compiling Denarius QT Ubuntu 16.04"
 
 echo "Updating linux packages"
 sudo apt-get update -y && apt-get upgrade -y
