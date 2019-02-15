@@ -1,4 +1,9 @@
 #!/bin/bash
+TEMP=/tmp/answer$$
+whiptail --title "Denarius [D]"  --menu  "Ubuntu 16.04 QT Installer :" 20 0 0 1 "Install Denarius QT" 2 "Update Denarius QT" 2>$TEMP
+choice=`cat $TEMP`
+case $choice in
+1) echo 1 "Installing Denarius FortunaStake Ubuntu 16.04"
 
 echo "Updating linux packages"
 sudo apt-get update -y && apt-get upgrade -y
@@ -30,3 +35,18 @@ rm -rf database txleveldb smsgDB
 #unzip chaindata.zip
 wget https://github.com/carsenk/denarius/releases/download/v3.3.6/chaindata1612994.zip
 unzip chaindata1612994.zip
+                ;;
+2) echo 2 "Update Denarius QT"
+echo "Updating Denarius Wallet"
+cd ~/denarius || exit
+git checkout master
+git pull
+
+echo "Change line in denarius-qt.pro from stdlib=c99 to stdlib=gnu99"
+sed -i 's/c99/gnu99/' ~/denarius/denarius-qt.pro
+
+qmake "USE_QRCODE=1" "USE_UPNP=1" denarius-qt.pro
+make
+                ;;
+esac
+echo Selected $choice
