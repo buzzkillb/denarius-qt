@@ -1,8 +1,9 @@
 # Compile Denarius QT Ubuntu 16.04 or Ubuntu 18.04.1
 
-Compiles Denarius QT Ubuntu 16.04 or 18.04, Grabs latest chaindata, and populates denarius.conf with addnodes and nativetor=1 or can update a previous compile to latest master branch.  
+Compiles Denarius QT Ubuntu 16.04 or 18.04, Grabs latest chaindata, and populates denarius.conf with addnodes or can update a previous compile to latest master branch.  
 ```bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/denarius-qt/master/denariusqt.sh)"```  
-
+to turn on nativetor in denarius.conf  
+```nativetor=1```  
 
 ![Denarius Installer Menu](https://raw.githubusercontent.com/buzzkillb/denarius-qt/master/compile-menu.PNG)  
       
