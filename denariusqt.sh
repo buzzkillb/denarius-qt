@@ -34,8 +34,8 @@ rm -rf database txleveldb smsgDB
 #wget http://d.hashbag.cc/chaindata.zip
 #unzip chaindata.zip
 wget https://github.com/carsenk/denarius/releases/download/v3.3.7/chaindata1701122.zip
-unzip chaindata1612994.zip
-rm chaindata1612994.zip
+unzip chaindata1701122.zip
+rm chaindata1701122.zip
 Echo "Back to Compiled QT Binary Folder"
 cd ~/denarius/src
                 ;;
@@ -96,8 +96,8 @@ rm -rf database txleveldb smsgDB
 #wget http://d.hashbag.cc/chaindata.zip
 #unzip chaindata.zip
 wget https://github.com/carsenk/denarius/releases/download/v3.3.7/chaindata1701122.zip
-unzip chaindata1612994.zip
-rm chaindata1612994.zip
+unzip chaindata1701122.zip
+rm chaindata1701122.zip
 Echo "Back to Compiled QT Binary Folder"
 cd ~/denarius/src
                 ;;
