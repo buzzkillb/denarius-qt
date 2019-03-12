@@ -34,8 +34,8 @@ rm -rf database txleveldb smsgDB
 wget https://github.com/carsenk/denarius/releases/download/v3.3.7/chaindata1701122.zip
 unzip chaindata1701122.zip
 rm chaindata1701122.zip
-Echo "Back to Compiled QT Binary Folder"
-cd ~/denarius/src
+echo "Back to Compiled QT Binary Folder"
+cd ~/denarius
                 ;;
 2) echo 2 "Update Denarius QT"
 echo "Updating Denarius Wallet"
@@ -94,8 +94,8 @@ rm -rf database txleveldb smsgDB
 wget https://github.com/carsenk/denarius/releases/download/v3.3.7/chaindata1701122.zip
 unzip chaindata1701122.zip
 rm chaindata1701122.zip
-Echo "Back to Compiled QT Binary Folder"
-cd ~/denarius/src
+echo "Back to Compiled QT Binary Folder"
+cd ~/denarius
                 ;;
 4) echo 4 "Update Denarius QT 18.04"
 echo "Updating Denarius Wallet"
@@ -108,8 +108,8 @@ git pull
 
 qmake "USE_UPNP=1" "USE_QRCODE=1" OPENSSL_INCLUDE_PATH=/usr/local/ssl/include OPENSSL_LIB_PATH=/usr/local/ssl/lib denarius-qt.pro
 make
-Echo "Back to Compiled QT Binary Folder"
-cd ~/denarius/src
+echo "Back to Compiled QT Binary Folder"
+cd ~/denarius
                 ;;
 esac
 echo Selected $choice
