@@ -79,7 +79,7 @@ git pull
 #echo "Change line in denarius-qt.pro from stdlib=c99 to stdlib=gnu99"
 #sed -i 's/c99/gnu99/' ~/denarius/denarius-qt.pro
 
-qmake "USE_UPNP=1" "USE_QRCODE=1" OPENSSL_INCLUDE_PATH=/usr/local/ssl/include OPENSSL_LIB_PATH=/usr/local/ssl/lib denarius-qt.pro
+qmake "USE_UPNP=1" "USE_QRCODE=1" LIBS=-lboost_chrono OPENSSL_INCLUDE_PATH=/usr/local/ssl/include OPENSSL_LIB_PATH=/usr/local/ssl/lib denarius-qt.pro
 make
 
 echo "Populate denarius.conf"
