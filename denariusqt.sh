@@ -1,6 +1,6 @@
 #!/bin/bash
 TEMP=/tmp/answer$$
-whiptail --title "Denarius [D]"  --menu  "Ubuntu 16.04/18.04 QT Wallet :" 20 0 0 1 "Compile Denarius QT Ubuntu 16.04" 2 "Update Denarius QT 16.04 to v3.4 latest" 3 "Compile Denarius QT Ubuntu 18.04" 4 "Update Denarius QT 18.04 to v3.4 latest" 2>$TEMP
+whiptail --title "Denarius [D]"  --menu  "Ubuntu 16.04/18.04 QT Wallet :" 20 0 0 1 "Compile Denarius QT Ubuntu 16.04" 2 "Update Denarius QT 16.04 to v3.4 latest" 3 "Compile Denarius QT Ubuntu 18.04" 4 "Update Denarius QT 18.04 to v3.4 latest" 5 "Add FortunaStake Addnodes to denarius.conf" 2>$TEMP
 choice=`cat $TEMP`
 case $choice in
 1) echo 1 "Compiling Denarius QT Ubuntu 16.04"
@@ -110,6 +110,21 @@ qmake "USE_UPNP=1" "USE_QRCODE=1" OPENSSL_INCLUDE_PATH=/usr/local/ssl/include OP
 make
 echo "Back to Compiled QT Binary Folder"
 cd ~/denarius
+                ;;
+5) echo 5 "Put Addnodes into denarius.conf"
+echo "Get JQ to parse JSON file"
+sudo apt-get install jq
+echo "Get Coinexplorer FS List"
+wget https://www.coinexplorer.net/api/v1/D/masternode/list
+cat list | jq '.result[0].addr' | tr -d "\""  >> fspeers.txt
+cat list | jq '.result[1].addr' | tr -d "\""  >> fspeers.txt
+cat list | jq '.result[2].addr' | tr -d "\""  >> fspeers.txt
+cat list | jq '.result[3].addr' | tr -d "\""  >> fspeers.txt
+cat list | jq '.result[4].addr' | tr -d "\""  >> fspeers.txt
+cat list | jq '.result[5].addr' | tr -d "\""  >> fspeers.txt
+cat fspeers.txt >> ~/.denarius/denarius.conf
+rm list
+rm fspeers.txt
                 ;;
 esac
 echo Selected $choice
