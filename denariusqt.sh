@@ -122,6 +122,7 @@ cat list | jq '.result[2].addr' | tr -d "\""  >> fspeers.txt
 cat list | jq '.result[3].addr' | tr -d "\""  >> fspeers.txt
 cat list | jq '.result[4].addr' | tr -d "\""  >> fspeers.txt
 cat list | jq '.result[5].addr' | tr -d "\""  >> fspeers.txt
+sed 's/^/addnode=/' fspeers.txt
 cat fspeers.txt >> ~/.denarius/denarius.conf
 rm list
 rm fspeers.txt
