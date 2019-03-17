@@ -113,19 +113,20 @@ cd ~/denarius
                 ;;
 5) echo 5 "Put Addnodes into denarius.conf"
 echo "Get JQ to parse JSON file"
-sudo apt-get install jq
+sudo apt-get install -y jq
 echo "Get Coinexplorer FS List"
 wget https://www.coinexplorer.net/api/v1/D/masternode/list
 cat list | jq '.result[0].addr' | tr -d "\""  >> fspeers.txt
 cat list | jq '.result[1].addr' | tr -d "\""  >> fspeers.txt
 cat list | jq '.result[2].addr' | tr -d "\""  >> fspeers.txt
-cat list | jq '.result[3].addr' | tr -d "\""  >> fspeers.txt
-cat list | jq '.result[4].addr' | tr -d "\""  >> fspeers.txt
-cat list | jq '.result[5].addr' | tr -d "\""  >> fspeers.txt
-sed 's/^/addnode=/' fspeers.txt
-cat fspeers.txt >> ~/.denarius/denarius.conf
+#cat list | jq '.result[3].addr' | tr -d "\""  >> fspeers.txt
+#cat list | jq '.result[4].addr' | tr -d "\""  >> fspeers.txt
+#cat list | jq '.result[5].addr' | tr -d "\""  >> fspeers.txt
+sed 's/^/addnode=/' fspeers.txt > addnode.txt
+cat addnode.txt >> ~/.denarius/denarius.conf
 rm list
 rm fspeers.txt
+rm addnode.txt
                 ;;
 esac
 echo Selected $choice
