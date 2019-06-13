@@ -13,8 +13,8 @@ sudo apt-get install -y git unzip build-essential libssl-dev libdb++-dev libboos
 echo "Installing Denarius Wallet"
 git clone https://github.com/carsenk/denarius
 cd denarius || exit
-git checkout v3.4
-git pull
+#git checkout v3.4
+#git pull
 
 #echo "Change line in denarius-qt.pro from stdlib=c99 to stdlib=gnu99"
 #sed -i 's/c99/gnu99/' ~/denarius/denarius-qt.pro
@@ -31,17 +31,17 @@ cd ~/.denarius || exit
 rm -rf database txleveldb smsgDB
 #wget http://d.hashbag.cc/chaindata.zip
 #unzip chaindata.zip
-wget https://github.com/carsenk/denarius/releases/download/v3.3.7/chaindata1799510.zip
-unzip chaindata1799510.zip
-rm chaindata1799510.zip
+wget https://github.com/carsenk/denarius/releases/download/v3.3.9.1/chaindata2022527.zip
+unzip chaindata2022527.zip
+rm chaindata2022527.zip
 echo "Back to Compiled QT Binary Folder"
 cd ~/denarius
                 ;;
 2) echo 2 "Update Denarius QT"
 echo "Updating Denarius Wallet"
 cd ~/denarius || exit
-git checkout v3.4
-git pull
+#git checkout v3.4
+#git pull
 
 #echo "Change line in denarius-qt.pro from stdlib=c99 to stdlib=gnu99"
 #sed -i 's/c99/gnu99/' ~/denarius/denarius-qt.pro
@@ -73,8 +73,8 @@ openssl version -v
 echo "Installing Denarius Wallet"
 git clone https://github.com/carsenk/denarius
 cd denarius
-git checkout v3.4
-git pull
+#git checkout v3.4
+#git pull
 
 #echo "Change line in denarius-qt.pro from stdlib=c99 to stdlib=gnu99"
 #sed -i 's/c99/gnu99/' ~/denarius/denarius-qt.pro
@@ -91,16 +91,16 @@ cd ~/.denarius
 rm -rf database txleveldb smsgDB
 #wget http://d.hashbag.cc/chaindata.zip
 #unzip chaindata.zip
-wget https://github.com/carsenk/denarius/releases/download/v3.3.7/chaindata1799510.zip
-unzip chaindata1799510.zip
-rm chaindata1799510.zip
+wget https://github.com/carsenk/denarius/releases/download/v3.3.9.1/chaindata2022527.zip
+unzip chaindata2022527.zip
+rm chaindata2022527.zip
 echo "Back to Compiled QT Binary Folder"
 cd ~/denarius
                 ;;
 4) echo 4 "Update Denarius QT 18.04"
 echo "Updating Denarius Wallet"
 cd ~/denarius || exit
-git checkout v3.4
+git checkout master
 git pull
 
 #echo "Change line in denarius-qt.pro from stdlib=c99 to stdlib=gnu99"
